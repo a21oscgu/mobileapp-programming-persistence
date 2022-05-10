@@ -7,7 +7,7 @@ public class DatabaseTables {
         static final String TABLE_NAME = "car";
         static final String COLUMN_NAME_ID = "id";
         static final String COLUMN_NAME_NAME = "name";
-        static final String COLUMN_NAME_TOP_SPEED = "top speed";
+        static final String COLUMN_NAME_TOPSPEED = "topSpeed";
 
     }
 
@@ -17,7 +17,7 @@ public class DatabaseTables {
             "CREATE TABLE " + Cars.TABLE_NAME + " (" +
                     Cars.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
                     Cars.COLUMN_NAME_NAME + " TEXT," +
-                    Cars.COLUMN_NAME_TOP_SPEED + " INT)";
+                    Cars.COLUMN_NAME_TOPSPEED + " INT)";
 
     static final String SQL_DELETE_CARS =
             // "DROP TABLE IF EXISTS car"
