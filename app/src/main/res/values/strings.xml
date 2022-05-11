@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Persistence</string>
-    <string name="thetext">Text</string>
+    <string name="the_text">Text</string>
     <string name="read">Read</string>
     <string name="write">Write</string>
-    <string name="input"></string>
+    <string name="explaining_text">Fill in:</string>
+    <string name="input_1">Car id</string>
+    <string name="input_2">Car name</string>
+    <string name="input_3">Top speed (km/h)</string>
 </resources>
