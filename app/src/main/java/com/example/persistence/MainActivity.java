@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         database = databaseHelper.getWritableDatabase();
         Button write = findViewById(R.id.write);
         Button read = findViewById(R.id.read);
+        Button delete = findViewById(R.id.delete);
 
         //When the user taps (clicks) the 'Write' button the values in the EditText views
         // should be written as a single row to a SQLite database table
