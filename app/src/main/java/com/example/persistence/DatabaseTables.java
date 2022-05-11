@@ -7,16 +7,18 @@ public class DatabaseTables {
         static final String TABLE_NAME = "car";
         static final String COLUMN_NAME_ID = "id";
         static final String COLUMN_NAME_NAME = "name";
+        static final String COLUMN_NAME_COLOR = "color";
         static final String COLUMN_NAME_TOPSPEED = "topSpeed";
 
     }
 
     static final String SQL_CREATE_CARS =
             // Här skapar vi vår tabell med tre kolumner. Typ såhär:
-            // "CREATE TABLE car (id INTEGER PRIMARY KEY, name TEXT, top speed INT)"
+            // "CREATE TABLE car (id INTEGER PRIMARY KEY, name TEXT, color TEXT, top speed INT)"
             "CREATE TABLE " + Cars.TABLE_NAME + " (" +
                     Cars.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
                     Cars.COLUMN_NAME_NAME + " TEXT," +
+                    Cars.COLUMN_NAME_COLOR + " TEXT," +
                     Cars.COLUMN_NAME_TOPSPEED + " INT)";
 
     static final String SQL_DELETE_CARS =
