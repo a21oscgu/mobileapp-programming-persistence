@@ -124,8 +124,8 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <Button
-                android:id="@+id/read"
-                android:text="@string/read"
+                android:id="@+id/write"
+                android:text="@string/write"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -133,11 +133,11 @@
                 app:layout_constraintRight_toRightOf="parent"/>
 
             <Button
-                android:id="@+id/write"
-                android:text="@string/write"
+                android:id="@+id/read"
+                android:text="@string/read"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/read"
+                app:layout_constraintTop_toBottomOf="@id/write"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginTop="10dp"/>
