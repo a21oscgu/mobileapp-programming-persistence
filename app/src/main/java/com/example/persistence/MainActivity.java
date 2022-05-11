@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,20 +29,12 @@ public class MainActivity extends AppCompatActivity {
         Button read = findViewById(R.id.read);
         Button delete = findViewById(R.id.delete);
 
-        final String name = findViewById(R.id.edit_text_name).toString();
-        final String color = findViewById(R.id.edit_text_color).toString();
-
-        EditText editTextTopSpeed = findViewById(R.id.edit_text_top_speed);
-        String string_from_et = editTextTopSpeed.getText().toString();
-        final int topSpeed = Integer.parseInt(string_from_et);
-
         //When the user taps (clicks) the 'Write' button the values in the EditText views
         // should be written as a single row to a SQLite database table
         write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("logcat_output","WRITE");
-                addCar(name, color,topSpeed);
+                addCar("", "Red",300);
             }
         });
 
@@ -52,19 +43,13 @@ public class MainActivity extends AppCompatActivity {
         read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("logcat_output","READ");
-                printCars();
+
             }
         });
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("logcat_output","READ");
-                /*for(int i=1; i <= ; i++){
-                    deleteCar(i);
-                }*/
-            }
-        });
+
+        // Kommentarer:
+        // Och skapa t.ex. en annan knapp som tar bort berg. Name och Height kan också ha två edittexts.
+        printCars();
     }
     private void printCars(){
         Cursor cursor = database.query(DatabaseTables.Cars.TABLE_NAME, null, null, null, null, null, null);
@@ -88,12 +73,6 @@ public class MainActivity extends AppCompatActivity {
         values.put(DatabaseTables.Cars.COLUMN_NAME_COLOR, color);
         values.put(DatabaseTables.Cars.COLUMN_NAME_TOPSPEED, topSpeed);
         long id = database.insert(DatabaseTables.Cars.TABLE_NAME,null,values);
-        Log.d("logcat_output", "Created car with id: " + id + ", name: " + name + ", color: " + color + ", top speed: " + topSpeed + ".");
-    }
-
-    private int deleteCar(long id) {
-        String selection = DatabaseTables.Cars.COLUMN_NAME_ID + " = ?";
-        String[] selectionArgs = { String.valueOf(id) };
-        return database.delete(DatabaseTables.Cars.TABLE_NAME, selection, selectionArgs);
+        Log.d("MainActivity", "Created car with id: " + id + ", name: " + name + ", color: " + color + ", top speed: " + topSpeed + ".");
     }
 }
